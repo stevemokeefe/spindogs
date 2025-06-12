@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Parcel</title>
+    <link rel="stylesheet" href="scss/styles.scss">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Available homes</h1>
+      <p>We have 25 homes available</p>
+      <nav class="d-flex" aria-label="Primary">
+        <ul>
+          <li><a class="btn btn-secondary" href="#">Shared ownership</a></li>
+          <li><a class="btn btn-secondary" href="#">Private sale</a></li>
+          <li><a class="btn btn-secondary" href="#">London living rent</a></li>
+        </ul>
+
+        <a class="btn btn-outline-primary" href="#">About buying options</a>
+      </nav>
+
+      <div class="table-container">
+        <table class="table" role="table" aria-label="Property comparison table">
+          <caption>Comparison of available flats</caption>
+          <thead>
+            <tr>
+              <th class="col-1" scope="col">Compare</th>
+              <th scope="col"><input type="checkbox" id="flat1"><label for="flat1"> Flat 123</label></th>
+              <th scope="col"><input type="checkbox" id="home1"><label for="home1"> Home 345</label></th>
+              <th scope="col"><input type="checkbox" id="flat2"><label for="flat2"> Flat 123</label></th>
+              <th scope="col"><input type="checkbox" id="flat3"><label for="flat3"> Flat 123</label></th>
+              <th scope="col"><input type="checkbox" id="flat4"><label for="flat4"> Flat 123</label></th>
+              <th scope="col"><input type="checkbox" id="flat5"><label for="flat5"> Flat 123</label></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Beds</th>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <th scope="row">Bathroom</th>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th scope="row">Purchase price</th>
+              <td>£1,000,000</td>
+              <td>£1,000,000</td>
+              <td>£1,000,000</td>
+              <td>£1,000,000</td>
+              <td>£1,000,000</td>
+              <td>£1,000,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Share from</th>
+              <td>25%</td>
+              <td>25%</td>
+              <td>25%</td>
+              <td>25%</td>
+              <td>25%</td>
+              <td>25%</td>
+            </tr>
+            <tr>
+              <th scope="row">Min deposit</th>
+              <td>£10,000</td>
+              <td>£10,000</td>
+              <td>£10,000</td>
+              <td>£10,000</td>
+              <td>£10,000</td>
+              <td>£10,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Monthly payments</th>
+              <td>From £1,000</td>
+              <td>From £1,000</td>
+              <td>From £1,000</td>
+              <td>From £1,000</td>
+              <td>From £1,000</td>
+              <td>From £1,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Size</th>
+              <td>100sqm / 1076sq ft</td>
+              <td>100sqm / 1076sq ft</td>
+              <td>100sqm / 1076sq ft</td>
+              <td>100sqm / 1076sq ft</td>
+              <td>100sqm / 1076sq ft</td>
+              <td>100sqm / 1076sq ft</td>
+            </tr>
+            <tr>
+              <th scope="row">Availability</th>
+              <td>Availability</td>
+              <td>Availability</td>
+              <td>Availability</td>
+              <td>Availability</td>
+              <td>Availability</td>
+              <td>Availability</td>
+            </tr>
+            <tr>
+              <th scope="row">Info</th>
+              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
+              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Home 345</span></a></td>
+              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
+              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
+              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
