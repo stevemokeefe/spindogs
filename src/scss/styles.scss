@@ -1,2 +1,12 @@
 // Import all of Bootstrap’s CSS
 @import "bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+  --bs-body-font-family: 'Lexend Deca', sans-serif;
+}
+
+.table-container {
+  overflow-x: auto;
+}
