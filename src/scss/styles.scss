@@ -3,10 +3,225 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
+$black-off: #031314;
+$color-grey-light: #f5f5f5;
+$color-grey-lighter: #efefef;
+
+$color-blue-light: #E4F6F9;
+$color-blue-dark: #40B2C3;
+
+$color-green-darker: #174148;
+$color-green-dark: #3E767A;
+
+$border-width-small: 1px;
+
+$icon-size: 16px;
+$icon-size-large: 24px;
+
 :root {
   --bs-body-font-family: 'Lexend Deca', sans-serif;
 }
 
-.table-container {
+$spacer-smaller: $spacer * .25;
+$spacer-small: $spacer * .5;
+
+body {
+  overflow-x: hidden;
+  padding: ($spacer * 2) 0;
+}
+
+.btn {
+  border-radius: $border-radius-xl;
+}
+
+.btn-outline-primary {
+  color: $dark;
+  border-color: $color-blue-dark;
+}
+
+.icon {
+  display: block;
+  height: $icon-size;
+  width: $icon-size;
+}
+
+.icon-large {
+  height: $icon-size-large;
+  width: $icon-size-large;
+}
+
+.link-chevron {
+  color: $dark;
+}
+
+// Comparison table
+@for $i from 2 to 11 {
+    table:has(tr > *:nth-child(#{$i}):hover) tr > td:not(.sticky-compare):nth-child(#{$i}) {
+        background-color: $white;
+    }
+    table:has(tr > *:nth-child(#{$i}):hover) tr > th:not(.sticky-compare):nth-child(#{$i}) {
+        background-color: $color-green-darker;
+    }
+}
+
+tr>th:first-child,tr>td:first-child {
+    position: sticky;
+    left: 0;
+}
+
+.table-wrapper {
+  border-radius: $border-radius-lg;
+  border: 1px solid $border-color;
   overflow-x: auto;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 800px;
+
+    th, td {
+      padding: $spacer;
+      text-align: left;
+      white-space: nowrap;
+    }
+    
+    thead {
+        th {
+            background-color: $black-off;
+        }
+    }
+
+    th {
+      font-weight: normal;
+      vertical-align: middle;
+    }
+    
+    td {
+      background-color: $color-grey-light;
+
+      &.sticky-compare {
+        background-color: $color-blue-light;
+
+        &::after,
+        &::before {
+          content: '';
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+
+        &::before {
+          border-bottom: $border-width-small solid $color-blue-dark;
+        }
+        
+        &::after {
+          border-right: $border-width-small solid $color-blue-dark;
+        }
+
+        .link-chevron {
+          position: relative;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+.sticky {
+  position: sticky;
+  z-index: 2;
+}
+
+.sticky-item {
+  left: 0;
+  z-index: 3;
+}
+
+.icon-text-wrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacer * .5;
+}
+
+// Navigation styles
+.navbar {
+  border-radius: $border-radius-xl;
+  margin-bottom: $spacer;
+  padding: $spacer;
+}
+
+.nav-buttons {
+  position: relative;
+  
+  .btn-chevron {
+    display: none;
+  }
+
+  .is-visible + .btn-chevron {
+    .icon-chevron-down {
+      transition: transform 0.3s ease-in-out;
+      transform: rotate(180deg);
+    }
+  }
+
+  .list-inline {
+    display: flex;
+    gap: $spacer * .5;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .navbar {
+    background-color: transparent !important;
+    display: block !important;
+    padding: 0;
+
+    .btn:not(.btn-chevron) {
+      width: 100%;
+    }
+  }
+
+  .nav-buttons {
+    border: $border-width-small solid $dark;
+    border-radius: $border-radius;
+    display: block !important;
+    margin-bottom: $spacer;
+    padding: $spacer-small ($spacer * 2.5) $spacer-small $spacer-small;
+
+    .btn-chevron {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: $spacer-smaller;
+    }
+
+    .list-inline {
+      flex-direction: column;
+
+      .list-inline-item {
+        margin-right: 0;
+      }
+
+      &.is-visible {
+        display: flex;
+
+        li:not(:first-child) {
+          display: block;
+        }
+      }
+
+      li:not(:first-child) {
+        display: none;
+      }
+
+      .btn {
+        background-color: transparent;
+        border: none;
+        color: $color-green-dark;
+        text-align: left;
+      }
+    }
+  }
 }

@@ -3,117 +3,166 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap w/ Parcel</title>
+    <title>Available homes</title>
     <link rel="stylesheet" href="scss/styles.scss">
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid container-lg">
       <h1>Available homes</h1>
       <p>We have 25 homes available</p>
-      <nav class="d-flex" aria-label="Primary">
-        <ul>
-          <li><a class="btn btn-secondary" href="#">Shared ownership</a></li>
-          <li><a class="btn btn-secondary" href="#">Private sale</a></li>
-          <li><a class="btn btn-secondary" href="#">London living rent</a></li>
-        </ul>
+      <nav class="d-flex navbar bg-body-tertiary" aria-label="Primary">
+        <div class="nav-buttons">
+          <ul class="list-inline mb-0" id="nav-menu">
+            <li class="list-inline-item"><a class="btn btn-secondary" href="#">Shared ownership</a></li>
+            <li class="list-inline-item"><a class="btn btn-secondary" href="#">Private sale</a></li>
+            <li class="list-inline-item"><a class="btn btn-secondary" href="#">London living rent</a></li>
+          </ul>
+          <button class="btn btn-chevron"><img class="icon-chevron-down" src="icons/ui-chevron-down.svg" alt="" aria-hidden="true" width="16" height="16"><span class="visually-hidden">open menu</span></button>
+        </div>
 
-        <a class="btn btn-outline-primary" href="#">About buying options</a>
+        <a class="btn btn-outline-primary ms-auto" href="#">About buying options</a>
       </nav>
 
-      <div class="table-container">
-        <table class="table" role="table" aria-label="Property comparison table">
-          <caption>Comparison of available flats</caption>
+      <div class="table-wrapper">
+        <table class="table mb-0" id="compare-table" aria-label="Property comparison table">
+          <caption class="visually-hidden">Comparison of available flats</caption>
           <thead>
-            <tr>
-              <th class="col-1" scope="col">Compare</th>
-              <th scope="col"><input type="checkbox" id="flat1"><label for="flat1"> Flat 123</label></th>
-              <th scope="col"><input type="checkbox" id="home1"><label for="home1"> Home 345</label></th>
-              <th scope="col"><input type="checkbox" id="flat2"><label for="flat2"> Flat 123</label></th>
-              <th scope="col"><input type="checkbox" id="flat3"><label for="flat3"> Flat 123</label></th>
-              <th scope="col"><input type="checkbox" id="flat4"><label for="flat4"> Flat 123</label></th>
-              <th scope="col"><input type="checkbox" id="flat5"><label for="flat5"> Flat 123</label></th>
+            <tr class="table-dark">
+              <th class="table-column sticky sticky-item" scope="col">Compare</th>
+              <th data-original-index="1" scope="col"><input name="checkbox-1" id="checkbox-1" type="checkbox" data-col="1"><label for="checkbox-1"> Flat 123</label></th>
+              <th data-original-index="2" scope="col"><input name="checkbox-2" id="checkbox-2" type="checkbox" data-col="2"><label for="checkbox-2"> Home 345</label></th>
+              <th data-original-index="3" scope="col"><input name="checkbox-3" id="checkbox-3" type="checkbox" data-col="3"><label for="checkbox-3"> Flat 678</label></th>
+              <th data-original-index="4" scope="col"><input name="checkbox-4" id="checkbox-4" type="checkbox" data-col="4"><label for="checkbox-4"> Flat 910</label></th>
+              <th data-original-index="5" scope="col"><input name="checkbox-5" id="checkbox-5" type="checkbox" data-col="5"><label for="checkbox-5"> Flat 1112</label></th>
+              <th data-original-index="6" scope="col"><input name="checkbox-6" id="checkbox-6" type="checkbox" data-col="6"><label for="checkbox-6"> Flat 1314</label></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Beds</th>
-              <td>2</td>
-              <td>2</td>
-              <td>2</td>
-              <td>2</td>
-              <td>2</td>
-              <td>2</td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/bed.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Beds</span>
+                </span>
+              </th>
+              <td data-original-index="1">2</td>
+              <td data-original-index="2">2</td>
+              <td data-original-index="3">2</td>
+              <td data-original-index="4">2</td>
+              <td data-original-index="5">2</td>
+              <td data-original-index="6">2</td>
             </tr>
             <tr>
-              <th scope="row">Bathroom</th>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/Bath.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Bathroom</span>
+                </span>
+              </th>
+              <td data-original-index="1">1</td>
+              <td data-original-index="2">1</td>
+              <td data-original-index="3">1</td>
+              <td data-original-index="4">1</td>
+              <td data-original-index="5">1</td>
+              <td data-original-index="6">1</td>
             </tr>
             <tr>
-              <th scope="row">Purchase price</th>
-              <td>£1,000,000</td>
-              <td>£1,000,000</td>
-              <td>£1,000,000</td>
-              <td>£1,000,000</td>
-              <td>£1,000,000</td>
-              <td>£1,000,000</td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/Pound.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Purchase price</span>
+                </span>
+              </th>
+              <td data-original-index="1">£1,000,000</td>
+              <td data-original-index="2">£1,000,000</td>
+              <td data-original-index="3">£1,000,000</td>
+              <td data-original-index="4">£1,000,000</td>
+              <td data-original-index="5">£1,000,000</td>
+              <td data-original-index="6">£1,000,000</td>
             </tr>
             <tr>
-              <th scope="row">Share from</th>
-              <td>25%</td>
-              <td>25%</td>
-              <td>25%</td>
-              <td>25%</td>
-              <td>25%</td>
-              <td>25%</td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/Percent.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Share from</span>
+                </span>
+              </th>
+              <td data-original-index="1">25%</td>
+              <td data-original-index="2">25%</td>
+              <td data-original-index="3">25%</td>
+              <td data-original-index="4">25%</td>
+              <td data-original-index="5">25%</td>
+              <td data-original-index="6">25%</td>
             </tr>
             <tr>
-              <th scope="row">Min deposit</th>
-              <td>£10,000</td>
-              <td>£10,000</td>
-              <td>£10,000</td>
-              <td>£10,000</td>
-              <td>£10,000</td>
-              <td>£10,000</td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/Deposit.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Min deposit</span>
+                </span>
+              </th>
+              <td data-original-index="1">£10,000</td>
+              <td data-original-index="2">£10,000</td>
+              <td data-original-index="3">£10,000</td>
+              <td data-original-index="4">£10,000</td>
+              <td data-original-index="5">£10,000</td>
+              <td data-original-index="6">£10,000</td>
             </tr>
             <tr>
-              <th scope="row">Monthly payments</th>
-              <td>From £1,000</td>
-              <td>From £1,000</td>
-              <td>From £1,000</td>
-              <td>From £1,000</td>
-              <td>From £1,000</td>
-              <td>From £1,000</td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/Tag.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Monthly payments</span>
+                </span>
+              </th>
+              <td data-original-index="1">From £1,000</td>
+              <td data-original-index="2">From £1,000</td>
+              <td data-original-index="3">From £1,000</td>
+              <td data-original-index="4">From £1,000</td>
+              <td data-original-index="5">From £1,000</td>
+              <td data-original-index="6">From £1,000</td>
             </tr>
             <tr>
-              <th scope="row">Size</th>
-              <td>100sqm / 1076sq ft</td>
-              <td>100sqm / 1076sq ft</td>
-              <td>100sqm / 1076sq ft</td>
-              <td>100sqm / 1076sq ft</td>
-              <td>100sqm / 1076sq ft</td>
-              <td>100sqm / 1076sq ft</td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/Size.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Size</span>
+                </span>
+              </th>
+              <td data-original-index="1">100sqm / 1076sq ft</td>
+              <td data-original-index="2">100sqm / 1076sq ft</td>
+              <td data-original-index="3">100sqm / 1076sq ft</td>
+              <td data-original-index="4">100sqm / 1076sq ft</td>
+              <td data-original-index="5">100sqm / 1076sq ft</td>
+              <td data-original-index="6">100sqm / 1076sq ft</td>
             </tr>
             <tr>
-              <th scope="row">Availability</th>
-              <td>Availability</td>
-              <td>Availability</td>
-              <td>Availability</td>
-              <td>Availability</td>
-              <td>Availability</td>
-              <td>Availability</td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/Availability.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Availability</span>
+                </span>
+              </th>
+              <td data-original-index="1">Availability</td>
+              <td data-original-index="2">Availability</td>
+              <td data-original-index="3">Availability</td>
+              <td data-original-index="4">Availability</td>
+              <td data-original-index="5">Availability</td>
+              <td data-original-index="6">Availability</td>
             </tr>
             <tr>
-              <th scope="row">Info</th>
-              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
-              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Home 345</span></a></td>
-              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
-              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
-              <td><a class="link-icon" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
+              <th scope="row" class="table-column sticky sticky-item">
+                <span class="icon-text-wrapper">
+                  <img class="icon icon-large" src="icons/Info.svg" alt="" aria-hidden="true" width="24" height="24">
+                  <span class="text">Info</span>
+                </span>
+              </th>
+              <td data-original-index="1"><a class="link-chevron" href="#">More info<span class="visually-hidden"> about Flat 123</span></a></td>
+              <td data-original-index="2"><a class="link-chevron" href="#">More info<span class="visually-hidden"> about Home 345</span></a></td>
+              <td data-original-index="3"><a class="link-chevron" href="#">More info<span class="visually-hidden"> about Flat 678</span></a></td>
+              <td data-original-index="4"><a class="link-chevron" href="#">More info<span class="visually-hidden"> about Flat 910</span></a></td>
+              <td data-original-index="5"><a class="link-chevron" href="#">More info<span class="visually-hidden"> about Flat 1112</span></a></td>
+              <td data-original-index="6"><a class="link-chevron" href="#">More info<span class="visually-hidden"> about Flat 1314</span></a></td>
             </tr>
           </tbody>
         </table>
