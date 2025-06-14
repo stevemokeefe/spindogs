@@ -14,6 +14,7 @@ $color-green-darker: #174148;
 $color-green-dark: #3E767A;
 
 $border-width-small: 1px;
+$border-width-medium: 2px;
 
 $icon-size: 16px;
 $icon-size-large: 24px;
@@ -30,8 +31,22 @@ body {
   padding: ($spacer * 2) 0;
 }
 
+a {
+  &:focus {
+    box-shadow: none;
+    outline: $border-width-medium solid $color-green-darker;
+    outline-offset: $border-width-small;
+  }
+}
+
 .btn {
   border-radius: $border-radius-xl;
+
+  &:focus {
+    box-shadow: none;
+    outline: $border-width-medium solid $color-green-darker;
+    outline-offset: $border-width-small;
+  }
 }
 
 .btn-outline-primary {
