@@ -86,13 +86,13 @@ tr>th:first-child,tr>td:first-child {
 
 .table-wrapper {
   border-radius: $border-radius-lg;
-  border: 1px solid $border-color;
+  border: $border-width-small solid $border-color;
   overflow-x: auto;
 
   table {
     border-collapse: collapse;
-    width: 100%;
     min-width: 800px;
+    width: 100%;
 
     th, td {
       padding: $spacer;
